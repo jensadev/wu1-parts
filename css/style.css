@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.container {
+  width: min(100% - 3rem, var(--container-max, 60ch));
+  margin-inline: auto;
+}
+
+main {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}

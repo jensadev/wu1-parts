@@ -1,0 +1,61 @@
+:root {
+  --hero-height: 60vh;
+  --hero-max-height: 500px;
+}
+
+.hero {
+  display: grid;
+  grid-template-areas: "hero";
+  align-items: center;
+
+  height: var(--hero-height);
+  max-height: var(--hero-max-height);
+}
+
+.hero > * {
+  grid-area: hero;
+}
+
+.hero > img {
+  object-fit: cover;
+  height: min(var(--hero-height), var(--hero-max-height));
+  width: 55%;
+
+  justify-self: end;
+}
+
+.hero-content {
+  margin-left: 5%;
+  max-width: 40%; /* 100% - bild bredd 55%, 5% margin, justera om du har andra värden*/
+  min-width: 30ch;
+}
+
+/* hero2 */
+
+.hero2 {
+  display: grid;
+  grid-template-areas: "hero";
+  place-items: center;
+
+  height: var(--hero-height);
+  max-height: var(--hero-max-height);
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero2 > * {
+  grid-area: hero;
+}
+
+.hero2-content {
+  z-index: 1;
+  color: white;
+}
+
+.hero2 > img {
+  z-index: -1;
+
+  object-fit: cover;
+  height: min(var(--hero-height), var(--hero-max-height));
+  width: 100%;
+}

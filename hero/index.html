@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero - wu1-parts</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="hero.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>En produkt</h1>
+      <p>Du vill ha mig, du kan inte motstå mig!</p>
+      <a href="#">Kööööp</a>
+    </div>
+    <img src="https://picsum.photos/700/400" alt="Placeholder">
+  </header>
+
+  <main class="container">
+    <h1>Hero - produkthero</h1>
+    <h2>Vad och varför</h2>
+    <p>En hero på en sida är en form av header. Det är något som användaren möts av när de besöker din sida och det är din chans att göra ett intryck som varar.</p>
+    <p>Ofta så innehåller en hero en så kallad "call to action", det vill säga något som användaren önskas utföra.</p>
+    <p>Det kan vara att köpa en produkt, att skapa ett konto eller att prenumerera på ett nyhetsbrev.</p>
+    <h2>Hur</h2>
+    <p>För att skapa en hero så kommer vi starta med en grund i css. Vi kommer använd display: grid; för att kunna placera element ovanpå varandra. Men vi vill även kunna styra var elementen landar och i vilken ordning.</p>
+    <h3>Grunden</h3>
+    <p>Vi börjar med att skapa en container för vår hero. Vi använder display: grid; och grid-template-areas för att kunna styra var elementen hamnar.</p>
+    <pre>
+<code>
+  .hero {
+    display: grid;
+    grid-template-areas: "hero";
+    align-items: center;
+  }
+</code>
+    </pre>
+    <h3>Storlek, höjd</h3>
+    <p>Först så kommer vi att styra höjden på vår hero, bredden förutsätter vi är hela skärmen. Vi använder måttet vh, viewport height för att kunna sätta en höjd baserade på hur stor användarens webbläsarfönster är. Vi sätter också max-height för att heron inte ska täcka flera skärmar på mindre devices.</p>
+    <pre>
+<code>
+  :root {
+    --hero-height: 60vh;
+    --hero-max-height: 500px;
+  }
+  .hero {
+    height: var(--hero-height);
+    max-height: var(--hero-max-height);
+  }
+</code>
+    </pre>
+    <h3>Bilden</h3>
+    <p>Nästa del är att styra bildens storlek. Bilden ligger i elementet med .hero klassen så vi kan komma åt den med en css-selektor som väljer img element i .hero.</p>
+    <pre>
+<code>
+  .hero > img {
+    object-fit: cover;
+    height: min(var(--hero-height), var(--hero-max-height));
+    width: 55%;
+    
+    justify-self: end;
+  }
+</code>
+    </pre>
+    <p>Så vad gör detta, object-fit: cover; gör så att bilden täcker hela elementet. Height styr storleken och width bredden på elementet.</p>
+    <p>För att bilden ska placeras till höger om texten så använder vi justify-self: end; Här kan du såklart prova annan placering beronde på var din text finns.</p>
+    <h3>Texten</h3>
+    <p>Slutligen så justerar vi texten för att få en marginal och lägga den på sidan om bilden.</p>
+    <pre>
+<code>
+  .hero-content {
+    margin-left: 5%;
+    max-width: 40%;
+    min-width: 30ch;
+  }
+</code>
+    </pre>
+    <p>Allt detta är exempel och det behöver justeras utifrån din bild och din text.</p>
+    <h3>Små skärmar</h3>
+    <p>På små skärmar så kommer en hero nästa alltid få problem. Då kan det vara aktuellt att skapa undantag för stilarna med hjälp av media regler.</p>
+    <p>För att skapa ett undantag så skriver du i din img regel något liknande detta, du skapar då kod som bara är aktuell när villkoret för regeln är sann (min-width: 60rem).</p>
+    <pre>
+<code>
+.hero > img {
+  ...
+  @media (min-width: 60rem) {
+    width: 60%;
+  }
+}
+</code>
+    </pre>
+  </main>
+  <header class="hero2">
+    <div class="hero2-content">
+      <h1>En produkt</h1>
+      <p>Du vill ha mig, du kan inte motstå mig!</p>
+      <a href="#">Kööööp</a>
+    </div>
+    <img src="https://picsum.photos/700/400" alt="Placeholder">
+  </header>
+  <main class="container">
+    <h1>Hero - text på bild heron</h1>
+    <h2>Vad och varför</h2>
+    <p>Precis som tidigare så är det samma gällande budskapet, men vi gör det på annat sätt.</p>
+    <h2>Hur</h2>
+    <p>Mycket enklare än den första delen. Bilden får täcka hela elementet och vi styr ordningen på elementen med z-index. Tänk på elementen som lager som vi kan placera på varandra.</p>
+  </main>
+</body>
+</html>
