@@ -1,0 +1,14 @@
+:root {
+  --color-dark: #333;
+  --color-light: #fff;
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+
+  --container-max: 60rem;
+  --gutter: 2rem;
+
+  --font-size: 1.2rem;
+  --line-height: 1.5;
+  --font-body: sans-serif;
+  --font-heading: serif;
+}
