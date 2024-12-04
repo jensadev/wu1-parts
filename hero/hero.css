@@ -59,3 +59,30 @@
   height: min(var(--hero-height), var(--hero-max-height));
   width: 100%;
 }
+
+/* hero3 */
+
+.hero3 {
+  display: grid;
+  grid-template-areas: "hero";
+
+  height: var(--hero-height);
+  max-height: var(--hero-max-height);
+
+  background-color: rgba(158, 255, 174, 0.5);
+}
+
+.hero3 > * {
+  grid-area: hero;
+}
+
+.hero3-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, auto));
+  gap: 2rem;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 10vmin 2rem; 
+}

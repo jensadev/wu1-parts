@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knappar - wu1-parts</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+<main class="container">
+  <h1>Knappar</h1>
+  <p>Den här sidan hänger ihop med <a href="../hero">hero</a> sidan i ganska så stor utsträckning. Det för att samtliga heroes på den sidan använder sig av knappar.</p>
+  <h2>Vad</h2>
+  <p>En knapp på en webbsida är inte alltid en knapp, utan ofta är det faktiskt länkar som är stylade som knappar. Detta är för att oftast så leder knappen och knapptrycket till en sida och då ska ett länk element användas för att det funktionellt och semantiskt ska vara korrekt. Knappar är oftast att något ska skickas med ett formulär eller liknande, du kan kika på type egenskapens värden på <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type">MDN</a> för att se detta.</p>
+  <h2>Hur</h2>
+  <p>För att skapa en knapp så använder vi oss av antingen ett a-element eller ett button-element. Det är viktigt att tänka på att använda rätt element för rätt syfte. Om det är en länk så ska det vara ett a-element, om det är en knapp så ska det vara ett button-element.</p>
+  <h3>Grunden</h3>
+  <p>Vi börjar med att skapa en knapp. Vi använder oss av ett a-element och stylar det som en knapp. Vi använder display: inline-block; för att kunna sätta en bredd och höjd på elementet. Vi använder också padding för att skapa lite utrymme runt texten i knappen.</p>
+
+  <div class="buttons">
+    <a href="#" class="button">Button länk</a>
+    <button class="button">Button knapp</button>
+  </div>
+
+  <pre>
+<code>
+  .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+  }
+</code>
+  </pre>
+  <h3>Storlek, höjd</h3>
+  <p>För att skapa en knapp som är större så kan vi använda oss av padding. Vi kan också använda oss av font-size för att göra texten större. Vi kan också använda oss av border-radius för att skapa rundade hörn på knappen.</p>
+  <pre>
+<code>
+  .button--large {
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+  }
+</code>
+  </pre>
+  <h3>Hover</h3>
+  <p>För att skapa en hover-effekt på knappen så kan vi använda oss av :hover pseudo-klassen. Vi kan ändra bakgrundsfärgen och textfärgen för att skapa en effekt när användaren hovrar över knappen.</p>
+  <pre>
+<code>
+  .button:hover {
+    background-color: #555;
+    color: #eee;
+  }
+</code>
+  </pre>
+  <h3>Active</h3>
+  <p>För att skapa en active-effekt på knappen så kan vi använda oss av :active pseudo-klassen. Vi kan ändra bakgrundsfärgen och textfärgen för att skapa en effekt när användaren klickar på knappen.</p>
+  <pre>
+<code>
+  .button:active {
+    background-color: #777;
+    color: #ddd;
+  }
+</code>
+  </pre>
+
+  <h2>Stora och rundade knappar</h2>
+
+  <div class="buttons">
+    <a href="#" class="button button--large">Button länk</a>
+    <button class="button button--large">Button knapp</button>
+  </div>
+
+  <p>Så kom ihåg att allt är inte knappar även om det kan se ut så.</p>
+  <p>Testa nu att styla upp knapparna i din hero.</p>
+
+</main>
+  <footer>
+    <nav class="container">
+      <ul>
+        <li><a href="../index.html">Back to start</a></li>
+        <li><a href="https://github.com/jensadev/wu1-parts">GitHub Repo</a></li>
+      </ul>
+      <a href="#">Back to top</a>
+    </nav>
+  </footer>
+</body>
+</html>

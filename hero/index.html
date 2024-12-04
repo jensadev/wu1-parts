@@ -105,7 +105,60 @@
     <h2>Vad och varför</h2>
     <p>Precis som tidigare så är det samma gällande budskapet, men vi gör det på annat sätt.</p>
     <h2>Hur</h2>
-    <p>Mycket enklare än den första delen. Bilden får täcka hela elementet och vi styr ordningen på elementen med z-index. Tänk på elementen som lager som vi kan placera på varandra.</p>
+    <p>Mycket enklare än den första delen. Bilden får täcka hela elementet och vi styr ordningen på elementen med z-index. Tänk på elementen som lager som vi kan placera display:grid för att placera allt innehåll i mitten.</p>
+    <p>För att förbättra kontrasten så sätter vi sedan bakgrundsfärgen. Bakgrundsfärgen är transparent och förmörkar på så sätt bilden, vilket förbättrar kontrasten för den vita texten.</p>
   </main>
+  <header class="hero3">
+    <div class="hero3-wrapper">
+      <div class="hero3-content">
+        <h1>En produkt</h1>
+        <p>Du vill ha mig, du kan inte motstå mig!</p>
+        <a href="#">Kööööp</a>
+      </div>
+      <div class="hero3-form">
+        <h2>Skicka in din e-postadress</h2>
+        <form action="#">
+          <label for="email">E-postadress</label>
+          <input type="email" id="email" name="email">
+          <button type="submit">Skicka</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Hero med två kolumner</h1>
+    <p>För det här sista exemplet så kräver det att vi ändrar på HTML innehållet.</p>
+    <h2>Hur</h2>
+    <p>HTML koden ändras så att den div som har klassen hero-content nu finns innuti en hero-wrapper. Wrapperns funktion är att omsluta de två kolumnerna och skapa dem med hjälp av grid.</p>
+    <pre>
+<code>
+.hero3-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, auto));
+  gap: 2rem
+}
+</code>
+    </pre>
+    <p>Detta placerar innehållet i 2 kolumner som även anpassas efter skärmens storlek.</p>
+    <p>Med det på plats så kan vi ändra innehållets position med align-items och justify-content, precis som vi gjort tidigare med både heros och när vi arbetat med flex.</p>
+    <p>För att färdigställa exemplet så lägger vi till en padding för att få luft runt elementen. För det används måttet vmin vilket anpassar sig efter webbläsarfönstrets storlek.</p>
+    <pre>
+<code>
+.hero3-wrapper {
+  ...
+  padding: 10vmin 2rem;
+}
+</code>
+    </pre>
+  </main>
+  <footer>
+    <nav class="container">
+      <ul>
+        <li><a href="../index.html">Back to start</a></li>
+        <li><a href="https://github.com/jensadev/wu1-parts">GitHub Repo</a></li>
+      </ul>
+      <a href="#">Back to top</a>
+    </nav>
+  </footer>
 </body>
 </html>

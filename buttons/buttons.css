@@ -1,0 +1,29 @@
+.buttons {
+  padding: 10vmin 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button--large {
+  padding: 2rem 4rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
+
+.button:hover {
+  background-color: #555;
+  color: #eee;
+}
+
+.button:active {
+  background-color: #777;
+  color: #ddd;
+}
