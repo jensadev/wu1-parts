@@ -10,8 +10,35 @@
 </head>
 <body>
 <main class="container">
-  <h1>CSS variabler</h1>
+  <h1>CSS variabler, eller "custom properties"</h1>
+  <p>Att kunna använda variabler i CSS är otroligt praktiskt när det kommer till att kunna ändra saker snabbt och relativt enkelt. Det låter dig till exempel att deklarera färger på ett ställe i din css och du kan sedan använda dem om och om igen utan att behöva skriva en hex kod eller rgb värden. Förutom det så blir det väldigt enkelt att justera färger och typsnitt på många olika ställen i din design, utan att behöva söka igenom en massa regler.</p>
+  <h2>Hur?</h2>
+  <p>Så hur fungerar css variabler? Som i så många andra språk så behöver du deklarera variabeln, alltså skapa den och tilldela den ett värde. Syntaxet för en css variabel börjar med <code>--</code> 2 stycken sträck följt av variabelns namn. För att använda den sedan så används <code>var()</code> funktionen.</p>
+  <p>Variabeln eller egenskapen behöver skrivas inuti en css-regel som alla andra css-egenskaper.</p>
+  <pre>
+    <code>
+      .regel {
+        --egenskap: värde;
+        width: var(--egenskap);
+      }
+    </code>
+  </pre>
+  <p>På det här sättet kan vi skapa och använda egenskaper i vår css. Men viktigt i det här fallet är att <code>--egenskap</code> är lokal till vår css-regel, det vill säga att den inte går att använda utanför <code>.regel</code>. För att göra en variabel global och kunna återanvända den så kan vi använda pseudo-klassen <code>:root</code>.</p>
+  <p>För att deklarera variabler med root så kan vi göra det i början på css dokumentet.</p>
+  <pre>
+    <code>
+      :root {
+        --egenskap: värde;
+      }
 
+      .regel {
+        width: var(--egenskap);
+      }
+    </code>
+  </pre>
+  <h2>Ett exempel</h2>
+  <p>När vi nu vet hur css-variabler fungerar så kan vi använda dem till att deklarera färger, typsnitt och mått som vi kommer använda i vår design.</p>
+  <p>I det här exemplet så hittar du ett antal vanliga egenskaper som används på webbsidor.</p>
   <pre>
 <code>
   :root {
@@ -29,6 +56,26 @@
     --font-heading: serif;
   }
 </code>
+  </pre>
+  <p>När variablerna är på plats så använder du dem senare i dina css regler.</p>
+  <pre>
+<code>
+  body {
+    font-family: var(--font-body);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--color-dark);
+    background-color: var(--color-light);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1;
+  }
+  .container {
+    width: min(100% - var(--gutter), var(--container-max, 60ch));
+    margin-inline: auto;
+  }
+  </code>
   </pre>
 </main>
   <footer>
